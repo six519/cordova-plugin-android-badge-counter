@@ -17,7 +17,9 @@
     <js-module src="www/badgecounterplugin.js" name="BadgeCounterPlugin">
         <merges target="badgeCounterPlugin" />
     </js-module>
-
+    
+    <dependency id="xml2js" />
+    
     <platform name="android">
 
         <hook type="after_plugin_install" src="scripts/afterInstall.js" />
