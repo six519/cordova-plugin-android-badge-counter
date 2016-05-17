@@ -1,9 +1,12 @@
-var fs, path;
-
 module.exports = function(context) {
-    fs = require('fs');
-    path = require('path'); 
-
-    console.log("The main activity is " + process.env.MAIN_ACTIVITY_CLASS);    
+    var fs = require('fs');
+    var path = require('path'); 
+    var exec = require('child_process').exec;
+    
+    try {
+        var xml2js = require('xml2js');
+    }catch(e) {
+        exec("npm install xml2js");
+    }
 
 };
