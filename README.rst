@@ -6,3 +6,19 @@ Installation
 
 Usage
 =====
+::
+
+    //set badge count
+    window.badgeCounterPlugin.setBadge(1, function(e){
+        //success callback
+    }, function(e){
+        //error callback
+        alert('The error is: ' + e);
+    });
+
+    //clear badge
+    window.badgeCounterPlugin.clearBadge(function(e){
+        //success callback
+    }, function(e){
+        //error callback
+    });
