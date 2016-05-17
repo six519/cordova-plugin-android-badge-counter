@@ -32,9 +32,41 @@ public class BadgeCounterPlugin extends CordovaPlugin {
         BadgeCounterPlugin.ctx = cordova.getActivity().getApplicationContext();
 
     }
+    
+    public void setBadge(int count) {
+        ContentValues cv = new ContentValues();
+        cv.put("package", BadgeCounterPlugin.ctx.getPackageName());
+        cv.put("class", BadgeCounterPlugin.ctx.getResources().getString(R.string.main_activity_class));
+        cv.put("badgecount", count); 
+        BadgeCounterPlugin.ctx.getContentResolver().insert(Uri.parse("content://com.sec.badge/apps"), cv);
+    }
+    
+    public void clearBadge() {
+        ContentValues cv = new ContentValues();
+        cv.put("badgecount", 0);
+        BadgeCounterPlugin.ctx.getContentResolver().update(Uri.parse("content://com.sec.badge/apps"), cv, "package=?", new String[] {BadgeCounterPlugin.ctx.getPackageName()}); 
+    }
 
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 
+        JSONObject r = new JSONObject();
+
+        if ("setBadge".equals(action)) {
+
+            int cnt = args.getInt(0);
+            setBadge(cnt);
+            
+            r.put("ok", "ok");
+            callbackContext.success(r);
+        } else if("clearBadge".equals(action)) {
+            
+            clearBadge();
+
+            r.put("ok","ok");
+            callbackContext.success(r);
+        } else {
+            return false;
+        }
 
         return true;    
     }
