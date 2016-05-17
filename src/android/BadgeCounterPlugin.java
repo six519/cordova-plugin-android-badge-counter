@@ -19,6 +19,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import DYNAMIC_IMPORT_OF_R;
 
 public class BadgeCounterPlugin extends CordovaPlugin {
     public static final String TAG = "BadgeCounterPlugin";
@@ -36,7 +37,7 @@ public class BadgeCounterPlugin extends CordovaPlugin {
     public void setBadge(int count) {
         ContentValues cv = new ContentValues();
         cv.put("package", BadgeCounterPlugin.ctx.getPackageName());
-        cv.put("class", BadgeCounterPlugin.ctx.getResources().getString(BadgeCounterPlugin.ctx.R.string.main_activity_class));
+        cv.put("class", BadgeCounterPlugin.ctx.getResources().getString(R.string.main_activity_class));
         cv.put("badgecount", count); 
         BadgeCounterPlugin.ctx.getContentResolver().insert(Uri.parse("content://com.sec.badge/apps"), cv);
     }

@@ -22,6 +22,17 @@ module.exports = function(context) {
     }
     
     var cordova_app_id = json.widget.$.id;
-    console.log('The id is: ' + cordova_app_id);
+    var java_file = "platforms/android/src/com/ferdinandsilva/android/BadgeCounterPlugin.java";
+
+    fs.readFile(java_file, 'utf8', function (err,data) {
+        if (err) {
+            return console.log(err);
+        }
+        var result = data.replace(/DYNAMIC_IMPORT_OF_R/g, cordova_app_id + '.R');
+
+        fs.writeFile(java_file, result, 'utf8', function (err) {
+            if (err) return console.log(err);
+        });
+    });
 
 };
