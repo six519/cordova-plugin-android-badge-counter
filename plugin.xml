@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-android-badge-counter"
+        version="1.0.0">
+    <name>Android Badge Counter Cordova Plugin</name>
+    <description></description>
+    <license>Apache 2.0</license>
+    <preference name="MAIN_ACTIVITY_CLASS" />
+    <keywords>cordova,android,badge,counter</keywords>
+    <repo></repo>
+    <issue></issue>
+    <engines>
+        <engine name="cordova-plugman" version=">=4.2.0"/>
+    </engines>
+
+    <js-module src="www/badgecounterplugin.js" name="BadgeCounterPlugin">
+        <merges target="badgeCounterPlugin" />
+    </js-module>
+
+    <platform name="android">
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="BadgeCounterPlugin" >
+                <param name="android-package" value="com.ferdinandsilva.android.BadgeCounterPlugin"/>
+            </feature>
+        </config-file>
+
+        <config-file target="res/values/strings.xml" parent="/resources">
+            <string name="main_activity_class">$MAIN_ACTIVITY_CLASS</string>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="com.sec.android.provider.badge.permission.READ" />
+            <uses-permission android:name="com.sec.android.provider.badge.permission.WRITE" />
+        </config-file>
+
+        <source-file src="src/android/BadgeCounterPlugin.java" target-dir="src/com/ferdinandsilva/android" />
+    </platform>
+</plugin>
