@@ -3,6 +3,14 @@ Installation
 
 ``cordova plugin add https://github.com/six519/cordova-plugin-android-badge-counter.git --variable MAIN_ACTIVITY_CLASS="<FULLY_QUALIFIED_CLASS_NAME_OF_MAINACTIVITY>"``
 
+Note
+====
+
+If an error ``Error: Cannot find module 'xml2js'`` occurred then you need to uninstall first the plugin and install that missing module before re-installing the plugin again.
+
+::
+    cordova plugin rm cordova-plugin-android-badge-counter
+    npm install xml2js
 
 Usage
 =====
