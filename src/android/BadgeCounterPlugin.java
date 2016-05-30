@@ -1,3 +1,9 @@
+/***
+
+    Thanks to Daniel Ochoa's answer here:
+    http://stackoverflow.com/questions/20136483/how-to-interface-with-the-badgeprovider-on-samsung-phones-to-add-a-count-to-the
+
+***/
 package com.ferdinandsilva.android;
 
 import java.util.Arrays;
