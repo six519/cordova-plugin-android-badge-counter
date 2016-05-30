@@ -7,8 +7,8 @@ Note
 ====
 
 If an error ``Error: Cannot find module 'xml2js'`` occurred then you need to uninstall first the plugin and install that missing module before re-installing the plugin again.
-
 ::
+
     cordova plugin rm cordova-plugin-android-badge-counter
     npm install xml2js
 
