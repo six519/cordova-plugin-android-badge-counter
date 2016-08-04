@@ -22,7 +22,7 @@
 
         <hook type="after_plugin_install" src="scripts/afterInstall.js" />
         
-        <config-file target="res/xml/config.xml" parent="/*">
+        <config-file target="config.xml" parent="/*">
             <feature name="BadgeCounterPlugin" >
                 <param name="android-package" value="com.ferdinandsilva.android.BadgeCounterPlugin"/>
             </feature>
