@@ -1,0 +1,35 @@
+{
+  "name": "cordova-plugin-android-badge-counter",
+  "version": "1.0.0",
+  "description": "Cordova Plugin For Android Badge Counter",
+  "cordova": {
+    "id": "cordova-plugin-android-badge-counter",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/six519/cordova-plugin-android-badge-counter.git"
+  },
+  "keywords": [
+    "cordova",
+    "android",
+    "badge",
+    "counter",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "engines": [
+    {
+      "name": "cordova-plugman",
+      "version": ">=4.2.0"
+    }
+  ],
+  "author": "Ferdinand E. Silva",
+  "license": "Apache 2.0",
+  "bugs": {
+    "url": "https://github.com/six519/cordova-plugin-android-badge-counter/issues"
+  },
+  "homepage": "https://github.com/six519/cordova-plugin-android-badge-counter#readme"
+}
