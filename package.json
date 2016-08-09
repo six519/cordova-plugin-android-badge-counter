@@ -1,12 +1,15 @@
 {
   "name": "cordova-plugin-android-badge-counter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Cordova Plugin For Android Badge Counter",
   "cordova": {
     "id": "cordova-plugin-android-badge-counter",
     "platforms": [
       "android"
     ]
+  },
+  "dependencies": {
+    "xml2js": "xml2js"
   },
   "repository": {
     "type": "git",
